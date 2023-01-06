@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<ul id="localstorage-list"></ul>
+
+		<script>
+			// Get all the key-value pairs from local storage
+			var localStoragePairs = Object.entries(localStorage);
+
+			// Get the element to append the list items to
+			var listElement = document.getElementById("localstorage-list");
+
+			// Iterate over the key-value pairs and create a list item for each one
+			localStoragePairs.forEach(function (pair) {
+				var key = pair[0];
+				var value = pair[1];
+				var listItem = document.createElement("li");
+				listItem.textContent = key + ": " + value;
+				listElement.appendChild(listItem);
+			});
+		</script>
+	</body>
+</html>
+
